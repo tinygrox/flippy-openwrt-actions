@@ -4,7 +4,13 @@
 # Copyright (C) 2021 https://github.com/ophub/flippy-openwrt-actions
 #==========================================================================
 
-name: Package OpenWrt image
+- name: Package OpenWrt Firmware
+  uses: ophub/flippy-openwrt-actions@main
+  env:
+    OPENWRT_ARMSR: openwrt/bin/targets/*/*/*.tar.gz
+    PACKAGE_SOC: s905d
+    KERNEL_VERSION_NAME: 6.1.y_6.6.y
+    KERNEL_AUTO_LATEST: true
 
 on:
   repository_dispatch:
